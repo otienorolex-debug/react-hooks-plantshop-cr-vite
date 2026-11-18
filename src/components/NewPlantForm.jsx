@@ -12,7 +12,7 @@ function NewPlantForm({ onAddPlant }) {
     const newPlant = {
       name: formData.get('name').trim(),
       image: formData.get('image').trim(),
-      price: formData.get('price'),
+      price: String(formData.get('price') ?? ''),
     }
 
     const wasAdded = await onAddPlant(newPlant)
